@@ -35,7 +35,6 @@ def PageRank(Graph, landa, initValue=1):
     tail = (1-landa)/nodeCount
     for i in range(nodeCount):
         loop1Ranks.append(initValue/nodeCount)
-    print(loop1Ranks)
     for i in range(nodeCount):
         loop2Ranks.append(tail + landa * FindInVertex(Graph, i, loop1Ranks))
     print(loop2Ranks)
