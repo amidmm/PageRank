@@ -14,8 +14,8 @@ def FindInVertex(Graph, target, loop1Rank):
     result = 0
     for i in range(len(Graph.v)):
         if Graph.v[target] in Graph.e[Graph.v[i]] and target != i:
-            result += loop1Rank[i]/(len(Graph.e[Graph.v[i]])+1)
-    return result + loop1Rank[target]/(len(Graph.e[Graph.v[target]])+1)
+            result += loop1Rank[i] / (len(Graph.e[Graph.v[i]]) + 1)
+    return result + loop1Rank[target] / (len(Graph.e[Graph.v[target]]) + 1)
 
 
 def PageRank(Graph, landa, initValue=1):
@@ -32,10 +32,9 @@ def PageRank(Graph, landa, initValue=1):
     loop1Ranks = []
     loop2Ranks = []
     nodeCount = len(Graph.v)
-    tail = (1-landa)/nodeCount
+    tail = (1 - landa) / nodeCount
     for i in range(nodeCount):
-        loop1Ranks.append(initValue/nodeCount)
+        loop1Ranks.append(initValue / nodeCount)
     for i in range(nodeCount):
         loop2Ranks.append(tail + landa * FindInVertex(Graph, i, loop1Ranks))
     print(loop2Ranks)
-
