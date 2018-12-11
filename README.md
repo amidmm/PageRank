@@ -5,6 +5,6 @@ Usage Example :
 
     Graph.v = [1,2,3]
     Graph.e = {1:[2,3],2:[1],3:[]}
-    PageRank(Graph, None)  #landa is given a random number and initial value is 1
+    PageRank(Graph, None)  #lambda is given a random number and initial value is 1
     #or
     PageRank(Graph,0.15,100)
